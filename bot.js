@@ -35,3 +35,22 @@ if (message.content.startsWith(adminp + 'setT')) {
 
 client.login(process.env.BOT_TOKEN);  //لا تحط التوكن حقك هن
 
+
+var prefix = "-"
+client.on('message', message => {
+
+  if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+// By JàkeY#2019 And Toxic Codes
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+// By JàkeY#2019 And Toxic Codes
+  let args = message.content.split(" ").slice(1);
+// By JàkeY#2019 And Toxic Codes
+  if (command == "say") {
+  if (message.member.id !== "467151446509617182") return message.channel.send('**لا حبي ما يصير هيك 😂 , [Protector Bot] **');// By JàkeY#2019 And Toxic Codes
+   message.channel.send(args.join("  "))// By JàkeY#2019 And Toxic Codes
+   message.delete()// By JàkeY#2019 And Toxic Codes
+  }
+ });
+// لا تنسى تمنشني اذا جاتك مشكلة 😃
